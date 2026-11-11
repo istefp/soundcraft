@@ -38,6 +38,7 @@ mod plugin_window;
 mod pro_tools_keys;
 mod record_hint;
 mod rename_dialog;
+mod route_modifiers;
 mod rtp_window;
 mod sampler_window;
 mod save_as_replace;
