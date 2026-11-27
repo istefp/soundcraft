@@ -1,0 +1,146 @@
+$ git rev-parse HEAD
+a35d30b9802ef6bc2c294e53ab1bc8743069980e
+$ sw_vers; uname -m; rustc -V; cargo -V
+ProductName:		macOS
+ProductVersion:		26.6.2
+BuildVersion:		25G83
+arm64
+rustc 1.99.0 (b940084d7 2026-09-28)
+cargo 1.99.0 (5f94df478 2026-08-27)
+$ cargo test -p soundcraft-au-host non_real_time_params_stay_editable_but_not_automatable
+    Updating git repository `https://github.com/storytold/egui.git`
+    Updating git repository `https://github.com/storytold/winit.git`
+    Updating crates.io index
+    Updating git repository `https://github.com/storytold/craft-libs`
+    Updating git repository `https://github.com/storytold/craft-libs`
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+ Downloading crates ...
+  Downloaded transpose v0.2.3
+  Downloaded autocfg v1.5.1
+  Downloaded primal-check v0.3.4
+  Downloaded quote v1.0.47
+  Downloaded thiserror v2.0.21
+  Downloaded num-complex v0.4.6
+  Downloaded num-integer v0.1.47
+  Downloaded unicode-ident v1.0.27
+  Downloaded num-traits v0.2.19
+  Downloaded log v0.4.34
+  Downloaded serde_derive v1.0.229
+  Downloaded proc-macro2 v1.0.107
+  Downloaded serde v1.0.229
+  Downloaded thiserror-impl v2.0.21
+  Downloaded syn v3.0.9
+  Downloaded rustfft v6.4.1
+  Downloaded strength_reduce v0.2.4
+  Downloaded serde_core v1.0.229
+   Compiling autocfg v1.5.1
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling serde_core v1.0.229
+   Compiling serde v1.0.229
+   Compiling strength_reduce v0.2.4
+   Compiling thiserror v2.0.21
+   Compiling log v0.4.34
+   Compiling num-traits v0.2.19
+   Compiling num-integer v0.1.47
+   Compiling num-complex v0.4.6
+   Compiling syn v3.0.9
+   Compiling transpose v0.2.3
+   Compiling primal-check v0.3.4
+   Compiling rustfft v6.4.1
+   Compiling serde_derive v1.0.229
+   Compiling thiserror-impl v2.0.21
+   Compiling soundcraft-dsp v0.20.1 (/Users/devin/repos/soundcraft-1703/crates/dsp)
+   Compiling soundcraft-au-host v0.20.1 (/Users/devin/repos/soundcraft-1703/crates/au-host)
+    Finished `test` profile [optimized + debuginfo] target(s) in 35.47s
+     Running unittests src/lib.rs (target/debug/deps/soundcraft_au_host-1482d001f453212a)
+
+running 1 test
+test registry::tests::non_real_time_params_stay_editable_but_not_automatable ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 9 filtered out; finished in 0.00s
+
+     Running tests/it/main.rs (target/debug/deps/it-e4d3931f4817b45c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 5 filtered out; finished in 0.00s
+
+[exit code: 0]
+$ cargo test -p soundcraft-au-host
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized + debuginfo] target(s) in 0.32s
+     Running unittests src/lib.rs (target/debug/deps/soundcraft_au_host-1482d001f453212a)
+
+running 10 tests
+test ffi::tests::host_callbacks_report_the_transport ... ok
+test ffi::tests::struct_layouts_match_the_c_headers ... ok
+test registry::tests::non_real_time_params_stay_editable_but_not_automatable ... ok
+test registry::tests::units_map ... ok
+test registry::tests::params_map_and_hostile_ones_are_dropped ... ok
+test tests::categories_and_names ... ok
+test tests::foreign_ids_are_rejected_without_scanning ... ok
+test tests::fourccs_round_trip ... ok
+test tests::ids_parse_and_format ... ok
+test tests::unknown_components_are_errors_not_crashes ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/it/main.rs (target/debug/deps/it-e4d3931f4817b45c)
+
+running 5 tests
+test system_units::scan_lists_apple_units ... ok
+test system_units::lowpass_attenuates_highs ... ok
+test system_units::state_reader_reads_while_another_thread_renders ... ok
+test system_units::delay_runs_mono_stereo_and_odd_blocks ... ok
+test system_units::dls_synth_plays_a_note ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+   Doc-tests soundcraft_au_host
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+[exit code: 0]
+
+$ cargo fmt --check
+[exit code: 0]
+
+$ cargo clippy -p soundcraft-au-host --all-targets -- -D warnings
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Checking strength_reduce v0.2.4
+    Checking log v0.4.34
+    Checking serde_core v1.0.229
+    Checking num-traits v0.2.19
+    Checking thiserror v2.0.21
+    Checking num-integer v0.1.47
+    Checking num-complex v0.4.6
+    Checking transpose v0.2.3
+    Checking primal-check v0.3.4
+    Checking rustfft v6.4.1
+    Checking serde v1.0.229
+    Checking soundcraft-dsp v0.20.1 (/Users/devin/repos/soundcraft-1703/crates/dsp)
+    Checking soundcraft-au-host v0.20.1 (/Users/devin/repos/soundcraft-1703/crates/au-host)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 2.42s
+[exit code: 0]
